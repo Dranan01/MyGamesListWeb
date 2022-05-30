@@ -1,0 +1,22 @@
+<div class="loginContainer">
+    <div class="toolbar" role="banner">
+        <img class="icon"
+            src="assets\icon.png" > 
+        <span>My Games List</span>
+        <div class="spacer"></div>
+        
+        
+    </div>
+    <div class="loginComponentBox">
+        <span class="text">INTRODUCE YOUR USERNAME AND PASSWORD</span>
+        <div class="loginComponentCard">
+            <textarea class="loginTextArea" 
+            placeholder="introduce your username" required=true #username></textarea>
+            <textarea class="loginTextArea" 
+            placeholder="introduce your password" required=true #password></textarea>
+            <button class="loginButton" (click)="submit(username.value,password.value)">LOGIN</button>
+            
+        </div>
+    </div>
+
+</div>
