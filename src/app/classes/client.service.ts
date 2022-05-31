@@ -10,9 +10,13 @@ export class ClientService {
 private url:string = "http://localhost:8080/client/"
   constructor(private http:HttpClient) { }
 
-    //obtener logros
+    //obtener clientes
     getAll():Observable<Client[]>{
       return this.http.get<Client[]>(this.url);
+    }
+
+    getByUsername(username:string):Observable<Client>{
+      return this.http.get<Client>(this.url+"username"+"/"+username);
     }
 
 }

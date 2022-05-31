@@ -1,21 +1,22 @@
 <div class="loginContainer">
     <div class="toolbar" role="banner">
-        <img class="icon"
-            src="assets\icon.png" > 
-        <span>My Games List</span>
+        <img class="icon" src="assets\icon2.png">
+        <span class="mgText">My Games List</span>
+        <a [routerLink]="['/register']" routerLinkActive="router-link-active" class="registerText"> Register </a>
         <div class="spacer"></div>
-        
-        
+
+
     </div>
     <div class="loginComponentBox">
         <span class="text">INTRODUCE YOUR USERNAME AND PASSWORD</span>
         <div class="loginComponentCard">
-            <textarea class="loginTextArea" 
-            placeholder="introduce your username" required=true #username></textarea>
-            <textarea class="loginTextArea" 
-            placeholder="introduce your password" required=true #password></textarea>
-            <button class="loginButton" (click)="submit(username.value,password.value)">LOGIN</button>
-            
+            <input class="loginTextArea" placeholder="introduce your username" required=true #username />
+            <input class="loginTextArea" placeholder="introduce your password" required=true #password />
+            <button class="loginButton" (click)="submit(username.value,password.value)"> login </button>
+
+        </div>
+        <div class="a">
+            <a  [routerLink]="['/register']" routerLinkActive="router-link-active" class="forgotText"> Forgot password?</a>
         </div>
     </div>
 

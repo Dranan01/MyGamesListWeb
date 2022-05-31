@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
   }
@@ -10,8 +12,20 @@ body {
     max-height: 100px;
 }
 .text{
-    font-weight: bold
+    font-weight: bold;
+    color: black
+    
 }
+
+.registerText{
+  font-weight: 600;
+  font-size: 50px;
+  
+  margin-left: auto;
+  color: white;
+  background-color: orange;
+}
+
 .toolbar {
     position: absolute;
     top: 0;
@@ -20,23 +34,46 @@ body {
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #bcd8c1;
+    background-color: #2e51a2;
+    text-align: left;
+  }
+  .mgText{
+    display: flex ;
+    align-self: auto;
+    margin-left: 35%;
     color: white;
     font-weight: 600;
+    font-size: 50px;
   }
   .loginComponentBox{
+    display: block;
     min-width: 300px;
     max-width: 60%;
     margin: 0px auto;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgb(207, 205, 205);
     padding: 2rem 3rem;
     margin: auto;
     border-radius: 2.5rem;
-    background-color: #ecf0f3;
+    background-color: rgba(231, 228, 228, 0.651);
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
     color: black;
     margin-top: 10rem;
+    
   }
+
+  .a{
+    margin-top: 20px;
+
+    font-weight: 600;
+    font-size: 20px;
+    text-align: right;
+    align-items: right;
+    align-self: right;
+    align-content: right;
+  }
+
+  
+
   .loginTextArea{
         display: block;
         margin: 2rem 0;
@@ -58,7 +95,7 @@ body {
         font-size: 0.875rem;
         color: #ffffff;
         font-weight: bold;
-        background-color: #bcd8c1;
+        background-color: #2e51a2;
         width: 100%;
         display: block;
         padding: 0.875rem 1rem;
@@ -66,4 +103,11 @@ body {
         box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
         cursor: pointer;
       }
+
+  .registerText{
+    align-self: left;
+    padding: 1rem;
+    display: flex;
+    font-size: 20px;
+  }
   
