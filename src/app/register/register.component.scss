@@ -40,7 +40,7 @@
   }
 
 
-  .loginTextArea{
+  .registerTextArea{
     display: block;
     margin: 2rem 0;
     width: 100%;
@@ -79,4 +79,12 @@
     font-weight: bold;
     color: black
     
+}
+
+.welcomeText{
+  display: flex;
+  font-size: 50px;
+  color: black;
+  font-weight: bold;
+  align-self: center;
 }

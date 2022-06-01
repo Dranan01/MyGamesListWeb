@@ -1,4 +1,4 @@
-<div class = "registerContainer">
+<div class="registerContainer">
     <div class="toolbar" role="banner">
         <img class="icon" src="assets\icon2.png">
         <span class="mgText">My Games List</span>
@@ -7,16 +7,21 @@
     </div>
 
     <div class="loginComponentBox">
+        <div *ngIf="!creado">
         <span class="text">INTRODUCE YOUR USERNAME AND PASSWORD</span>
         <div class="loginComponentCard">
             <div class="space"></div>
-            <span class="text">USERNAME:</span>
-            <input class="loginTextArea" required=true #username />
-            <span class="text">PASSWORD:</span>
-            <input class="loginTextArea" required=true #password />
-            <button class="loginButton" > register </button>
-
+                <span class="text">USERNAME:</span>
+                <input class="registerTextArea" name="register1" required=true type="text" #username />
+                <span class="text">PASSWORD:</span>
+                <input class="registerTextArea" name="register2" required=true #password />
+                <button class="loginButton" name="registerButton" (click)="addClient(username.value, password.value)">
+                    register </button>
+            </div>
+            
+        </div>
+        <div *ngIf="creado">
+            <span class="welcomeText">WELCOME {{this.newClient.username.toUpperCase()}}</span>
         </div>
 
-
-</div>
+    </div>
