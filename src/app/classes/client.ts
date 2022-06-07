@@ -1,8 +1,8 @@
 export class Client {
 
-    id:number;
+    clientId:string;
     username:string;
     password:string;
     logged:boolean;
-
+    profilePic:string;
 }

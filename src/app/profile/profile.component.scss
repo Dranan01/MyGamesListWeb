@@ -1,0 +1,75 @@
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #2e51a2;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mgText {
+  display: flex;
+  align-self: auto;
+  margin-left: 35%;
+  color: white;
+  font-weight: 600;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+
+.profile {
+  display: inline-flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: flex-start;
+  margin-top: 60px;
+  margin-left: 30px;
+  align-content: center;
+  align-items: center;
+
+
+  &_Box {
+    display: inline-grid;
+    grid-template-columns: 27% 54% auto;
+    grid-template-rows: 22% auto 22%;
+    margin-top: 20px;
+  }
+
+  &_Description {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  &_Name{
+    margin-top: 20px;
+  }
+
+  &_List {
+    display: flex;
+    /* justify-self: flex-start; */
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 80px;
+  }
+
+  &_Image{
+    padding: 0px;
+    border: 6px;
+    border-style: solid;
+    border-radius: 32px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+   
+
+  }
+}

@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
 
 
   public navigate(){
-    window.location.href="http://Localhost:4200/"; 
+    window.location.href="http://Localhost:4200/profile/" + this.newClient.username; 
   }
 
   public addClient(username:any , password:any){
