@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
+import { finalize } from 'rxjs';
+import { Game } from '../classes/game';
+import { GameService } from '../classes/game.service';
 
 @Component({
   selector: 'app-game-list',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
-
-  constructor() { }
+  games:Game[];
+  constructor(private gameService:GameService, private renderer:Renderer2) { }
 
   ngOnInit(): void {
+    this.loadGames();
+    this.renderer.setStyle(document.body, "background","lightblue");
   }
+
+
+
+  private loadGames():void{
+    this.gameService.getAllGames().pipe(finalize(() => (null))).subscribe(e => this.games = e);
+ 
+  }
+
 
 }

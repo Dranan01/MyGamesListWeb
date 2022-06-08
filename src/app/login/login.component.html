@@ -11,7 +11,7 @@
         <span class="text">INTRODUCE YOUR USERNAME AND PASSWORD</span>
         <div class="loginComponentCard">
             <input class="loginTextArea" placeholder="introduce your username" required=true #username />
-            <input class="loginTextArea" placeholder="introduce your password" required=true #password />
+            <input class="loginTextArea" placeholder="introduce your password" type="password" required=true  #password />
             <button class="loginButton" (click)="submit(username.value,password.value)"> login </button>
 
         </div>

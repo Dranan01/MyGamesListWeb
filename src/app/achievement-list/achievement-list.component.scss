@@ -1,0 +1,30 @@
+.achievementList{
+    font-family: Arial, Helvetica, sans-serif;
+    &_Toolbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: #2e51a2;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      &_MgText {
+        display: flex;
+        align-self: auto;
+        margin-left: 35%;
+        color: white;
+        font-weight: 600;
+        font-size: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      &_Icon {
+        max-width: 100px;
+        max-height: 100px;
+      }
+    }

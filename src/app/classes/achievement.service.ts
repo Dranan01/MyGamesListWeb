@@ -7,14 +7,14 @@ import { Achievement } from './achievement';
   providedIn: 'root'
 })
 export class AchievementService {
-  private url:string = "http://localhost:8080/achivement/"
+  private url:string = "http://localhost:8080/achievement/"
 
   constructor(private http:HttpClient) { }
 
 
   //obtener logros
-  get():Observable<Achievement>{
-    return this.http.get<Achievement>(this.url);
+  getAll():Observable<Achievement[]>{
+    return this.http.get<Achievement[]>(this.url);
   }
 
 

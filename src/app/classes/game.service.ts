@@ -12,7 +12,7 @@ export class GameService {
 
   constructor(private http:HttpClient) { }
 
-  get():Observable<Game[]>{
+  getAllGames():Observable<Game[]>{
     return this.http.get<Game[]>(this.url);
   }
 

@@ -46,7 +46,7 @@ private getGames(){
 
 
 loadClient(username:string):void{
-  this.clientService.getByUsername(this.username!).pipe(finalize(() => ( console.log(this.client)))).subscribe(e => this.client = e);
+  this.clientService.getByUsername(this.username!).pipe(finalize(() => (null))).subscribe(e => this.client = e);
  
 }
 

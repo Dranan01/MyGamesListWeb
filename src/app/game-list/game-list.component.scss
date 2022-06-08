@@ -1,0 +1,101 @@
+html{
+  background: #2e51a2;
+}
+
+body{
+  margin: 0px 0px 0px 0px;
+}
+
+.gameList{
+  
+    font-family: Arial, Helvetica, sans-serif;
+    &_Toolbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: #2e51a2;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      &_MgText {
+        display: flex;
+        align-self: auto;
+        margin-left: 35%;
+        color: white;
+        font-weight: 600;
+        font-size: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      &_Icon {
+        max-width: 100px;
+        max-height: 100px;
+      }
+
+
+      &_Box{
+         margin-top: 70px;
+         display:flex;
+         flex-direction: column; 
+      }
+
+      &_Image{
+        grid-row: 1/span 3;
+        justify-self: self-start;
+        width: 200px;
+        height: 100px;
+        border: black;
+        border-style: groove;
+        border-radius: 30px;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    }
+      
+
+      &_Title{
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      &_Description{
+        margin-top: 40px;
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      &_Genre{
+        grid-column: 2;
+        grid-row: 3;
+      }
+
+      &_Grid{
+        display:grid;
+        grid-template-columns: 14% 54%;
+        grid-template-rows: 22% auto;
+      }
+
+
+      &_Button{
+        display: flex;
+        margin-left: auto;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        border: none;
+        font-size: 0.875rem;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #2e51a2;
+        width: 10%;
+        padding: 0.875rem 1rem;
+        border-radius: 1.5rem;
+        box-shadow: 3px 3px 8px black, -3px -3px 8px black;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+
+}

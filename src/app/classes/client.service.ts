@@ -18,7 +18,7 @@ private url:string = "http://localhost:8080/client"
     }
 
     getByUsername(username:string):Observable<Client>{
-      console.log(this.http.get<Client>(this.url+"/"+ "username"+"/"+username));
+      
       return this.http.get<Client>(this.url+"/"+ "username"+"/"+username);
       
     }
