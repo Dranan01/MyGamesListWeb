@@ -9,14 +9,14 @@
         </div>
 
         <div class="gameList_Box">
-            <div *ngFor="let item of games">
+            <div *ngFor="let item of games , let i = index">
                 <div class="gameList_Grid">
-                    <img class="gameList_Image" [src]="item.coverPage" />
-                    <div class="gameList_Title" [innerHTML]="item.name"></div>
-                    <div class="gameList_Description" [innerHTML]="item.description"></div>
-                    <div class="gameList_Genre" [innerHTML]="item.genre"></div>
+                    <img class="gameList_Image"  [src]="item.coverPage" />
+                        <div class="gameList_Title" (click)="navigate(item.name)" [innerHTML]="item.name" ></div>
+                        <div class="gameList_Description" [innerHTML]=" 'Description: ' + item.description"></div>
+                        <div class="gameList_Genre" [innerHTML]="'Genre: ' + item.genre"></div>
                 </div>
-                <button class="gameList_Button">ADD TO MY LIST</button>
+                <button class="gameList_Button" (click)="saveGameToClientList(item.gameId)">ADD TO MY LIST</button>
                 <hr>
 
             </div>

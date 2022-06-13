@@ -1,6 +1,6 @@
 export class Achievement {
     pachievementId:number;
-    //achName:string(?????????????)
+    achName:string;
     achDescription:string;
     achImage:string;
     isDone:boolean;

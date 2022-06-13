@@ -1,0 +1,93 @@
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #2e51a2;
+    text-align: left;
+}
+
+.mgText {
+    display: flex;
+    align-self: auto;
+    margin-left: 35%;
+    color: white;
+    font-weight: 600;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+
+.gameDetails {
+    font-family: Arial, Helvetica, sans-serif;
+    &_BoxImage {
+        margin-top: 60px;
+        display: flex;
+        align-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &_Image {
+        max-height: 768px;
+        max-width: 1366px;
+        border-color: #020202;
+        border-style: solid;
+        border-radius: 100px;
+        border: black;
+        border-width: 4px;
+        border-style: inset;
+    }
+
+    &_Info{
+        display: flex;
+        background-color: white;
+        border-style: groove;
+        border-radius: 30px;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+        flex-direction: column;
+        width:1366px ;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        margin-left: 240px;
+    }
+
+
+    &_Title{
+        font-size: 100px;
+    }
+
+    &_Achievements{
+        display: flex;
+        flex-direction: column;
+    
+
+    }
+     }
+
+
+    .AchievementDetails{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    summary{
+        font-weight: bold;
+        cursor: pointer;
+    }
+    pointer{
+        cursor: pointer;
+    }
+

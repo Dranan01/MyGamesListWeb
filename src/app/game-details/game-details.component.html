@@ -1,10 +1,36 @@
-<div class="profile">
+<div class="gameDetails">
     <div class="profileBar">
         <div class="toolbar" role="banner">
             <img class="icon" src="assets\icon2.png">
             <span class="mgText">My Games List</span>
+            <span>To the list</span>
             <div class="spacer"></div>
         </div>
     </div>
+</div>
 
-    
+
+<div class="gameDetails_BoxImage">
+    <img class="gameDetails_Image" [src]="game.coverPage">
+</div>
+<div class="gameDetails_Info">
+    <div class="gameDetails_Title" [innerHTML]="game.name"></div>
+    <div class="gameDetails_Description" [innerHTML]="'<b>Description: </b>' + game.description"></div>
+    <div class="gameDetails_Genre" [innerHTML]="'<b>Genero: </b>' + game.genre"></div>
+    <div class="gameDetails_ReleaseYear" [innerHTML]=" '<b>Release year: </b>' + game.releaseYear"></div>
+    <div class="gameDetails_Score" [innerHTML]="'<b>Score: </b>' + game.gameScore"></div>
+    <div class="gameDetails_Designer" [innerHTML]="'<b>Designer: </b>' + game.designer"></div>
+    <hr>
+    <details (click)="loadAchievements(game.gameId)"  placeholder=""><summary>Achievements:</summary></details>
+    <br>
+    <div class="gameDetails_Achievements" *ngIf="this.showAch">
+        <div *ngFor="let ach of achievements , let i = index">
+            <div class="AchievementDetails">
+                <img [src]="ach.achImage" />
+                <div [innerHTML]="'Description: ' + ach.achDescription"></div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

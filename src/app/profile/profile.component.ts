@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
   game:Game[];
   url:string
    username1:string;
-  constructor(private router: ActivatedRoute, private clientService:ClientService) { }
+  constructor(private router: ActivatedRoute,private routerDeactivated:Router , private clientService:ClientService) { }
 
   ngOnInit(): void {
     this.username = this.router.snapshot.paramMap.get("username")!;
@@ -48,6 +48,10 @@ private getGames(){
 loadClient(username:string):void{
   this.clientService.getByUsername(this.username!).pipe(finalize(() => (null))).subscribe(e => this.client = e);
  
+}
+
+navigate(){
+  this.routerDeactivated.navigate(["profile/gameList",this.username]);
 }
 
 

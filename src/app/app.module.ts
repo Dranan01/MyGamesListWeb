@@ -9,8 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GameListComponent } from './game-list/game-list.component';
-import { AchievementListComponent } from './achievement-list/achievement-list.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,10 @@ import { GameDetailsComponent } from './game-details/game-details.component';
     RegisterComponent,
     ProfileComponent,
     GameListComponent,
-    AchievementListComponent
-  ],
+    GameDetailsComponent
+    ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -29,9 +30,9 @@ import { GameDetailsComponent } from './game-details/game-details.component';
       { path: '', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'gameList', component: GameListComponent },
+      { path: 'profile/gameList/:username', component: GameListComponent },
       { path: 'profile/:username', component: ProfileComponent },
-      { path: 'game/:id/achievements', component: AchievementListComponent },
-      { path: 'game/:id', component: GameDetailsComponent},
+      { path: 'game/:name', component: GameDetailsComponent},
     ]),
    
   ],

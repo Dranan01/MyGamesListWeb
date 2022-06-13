@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { Client } from './client';
+import { ClientGames } from './clientGames';
 import { ClientNoId } from './clientNoId';
 import { Game } from './game';
 
@@ -39,6 +40,11 @@ private url:string = "http://localhost:8080/client"
 
     getGameList(id:string):Observable<Game[]>{
       return this.http.get<Game[]>(this.url+"/"+ id+ "/GameList");
+    }
+
+    addToGameList(gameid:string, clientid:string){
+      console.log(this.url+"/"+clientid+"/game/"+gameid);
+      return this.http.get<ClientGames>(this.url+"/"+clientid+"/game/"+gameid);
     }
 
 
