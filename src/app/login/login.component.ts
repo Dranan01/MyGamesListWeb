@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Client } from '../classes/client';
 import { ClientService } from '../classes/client.service';
 import {finalize} from 'rxjs/operators';
 import { Router, RouterLink } from '@angular/router';
+import { LogService } from '../log.service';
+import { ClientNoId } from '../classes/clientNoId';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   private client: Client;
-
+  guest:Client;
+  
 
   
 
@@ -25,17 +28,12 @@ export class LoginComponent implements OnInit {
     
   }
 
-
-  public cargar(){
-    
-    
-    }
   
 
 
   public submit(username: string, password: string) {
     
-    this.clientService.getByUsername(username).pipe(finalize(() => this.check())).subscribe(e => this.client = e);
+    this.clientService.getByUsername(username).pipe(finalize(() => (this.check(),LogService.setClient(this.client)))).subscribe(e => this.client = e);
   }
 
   public  check() {
@@ -48,6 +46,7 @@ export class LoginComponent implements OnInit {
       console.log(this.client.logged);
       console.log(this.client);
       this.clientService.modifyClient(this.client.clientId,this.client).pipe(finalize(() => this.navigate())).subscribe();
+
     }
     else {
       this.error(); //TODO ya vere que hago aqui
@@ -57,7 +56,7 @@ export class LoginComponent implements OnInit {
 
 
   public navigate(){
-   // window.location.href="http://Localhost:4200/profile/",this.client.username; 
+    LogService.client = this.client
     this.router.navigate(['/profile/',this.client.username]);
   }
 
@@ -67,10 +66,22 @@ export class LoginComponent implements OnInit {
 
   
 
+
+  SendGuest(){
+    this.guest={
+      clientId:"guest",
+      username:"guest",
+      password:"guest",
+      email:"guest",
+      description:"guest",
+      logged:true,
+      profilePic:"not"
+     }
   
+     LogService.client = this.guest;
 
   
 }
 
 
-
+}

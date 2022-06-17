@@ -33,4 +33,8 @@ export class GameService {
     return this.http.get<AchievementList>(this.url + id + "/achievementList")
   }
 
+  getGamesBySearch(search:string):Observable<Game[]>{
+    return this.http.get<Game[]>(this.url +"search/" + search);
+  }
+
 }

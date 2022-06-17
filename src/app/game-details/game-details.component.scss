@@ -13,7 +13,6 @@
 .mgText {
     display: flex;
     align-self: auto;
-    margin-left: 35%;
     color: white;
     font-weight: 600;
     font-size: 50px;
@@ -65,6 +64,7 @@
 
     &_Title{
         font-size: 100px;
+        text-decoration: underline;
     }
 
     &_Achievements{
@@ -83,6 +83,10 @@
         margin-top: 10px;
     }
 
+    .Achievement_Info{
+        align-self: start;
+    }
+
     summary{
         font-weight: bold;
         cursor: pointer;
@@ -91,3 +95,12 @@
         cursor: pointer;
     }
 
+    .ToList{
+        margin-left: auto;
+        color: white;
+        font-weight: 600;
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: orange;
+        cursor: pointer;    
+      }

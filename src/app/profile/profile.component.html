@@ -1,4 +1,4 @@
-<div class="profile">
+<div class="profile" *ngIf="this.isRealClient">
     <div class="profileBar">
         <div class="toolbar" role="banner">
             <img class="icon" src="assets\icon2.png">
@@ -7,19 +7,31 @@
             <div class="spacer"></div>
         </div>
     </div>
+    <div *ngIf="this.loadedClient">
+        <div class="profile_Box">
 
-    <div class="profile_Box">
-        
             <img class="profile_Image" [src]="client.profilePic" />
-        
-        
-            <div class="profile_Name" [innerHTML]="this.username"></div>
-            <div class="profile_Description"> No se si pondre algo aqui pero voy a hacer como que si hasta que mi
-                profesor me
-                responda</div>
-         
-    </div>
-    
-</div>
 
-<div class="profile_List"> placeholder para la lista</div>
+            <div class="profile_Name" [innerHTML]="this.username"></div>
+            <div *ngIf="!this.isEditable" class="profile_Description" [innerHTML]="this.client.description"></div>
+      
+                <input class="profile_Input" name="description" id="desc" type="text" required=true  placeholder="Write here your description" #description />
+                <button *ngIf="this.isEditable" (click)="editDescription(description.value)" class="profileButton">Save</button>
+        </div>
+        <button class="profile_Button" (click)="editable()">Profile Edit</button>
+    </div>
+
+
+    <div class="Games"> GAMES ON THE LIST:</div>
+    <br>
+    <div *ngIf="this.loaded">
+        <div *ngFor="let game of this.list.game">
+            <div class="Games_Container">
+                <div class="Games_Name" [innerHtml]="game.name"></div>
+                <img class="Games_Image" [src]="game.coverPage" />
+                <div class="Games_Description" [innerHTML]="game.description"></div>
+
+            </div>
+        </div>
+    </div>
+</div>

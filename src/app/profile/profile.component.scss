@@ -14,7 +14,6 @@
 .mgText {
   display: flex;
   align-self: auto;
-  margin-left: 35%;
   color: white;
   font-weight: 600;
   font-size: 50px;
@@ -28,41 +27,53 @@
 
 
 .profile {
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   flex: 1;
   justify-content: flex-start;
   margin-top: 60px;
   margin-left: 30px;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-family: Arial, Helvetica, sans-serif;
 
+
   &_Box {
-    display: inline-grid;
+    display: grid;
     grid-template-columns: 27% 54% auto;
     grid-template-rows: 22% auto 22%;
     margin-top: 20px;
-    
+    margin-left: 200px;
+    background: linear-gradient(to right, #8585ff, lightblue);
+    border-radius: 20px;
+    //background: #00000014;
   }
 
   &_Description {
     grid-column-start: 2;
     grid-column-end: 3;
+    margin-top: 10px;
+    /* max-width: 300px; */
+    width: 300px;
+    word-break: break-word;
   }
-  &_Name{
+  &_Input{
+    display: none;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-top: 10px;
+  }
+
+  &_Name {
     margin-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+
   }
 
-  &_List {
-    display: flex;
-    /* justify-self: flex-start; */
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 80px;
-  }
 
-  &_Image{
+
+  &_Image {
     padding: 0px;
     border: 6px;
     border-style: solid;
@@ -70,17 +81,72 @@
     margin-bottom: 10px;
     margin-right: 50px;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-   
 
+  }
+  &_Button{
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-size: 0.875rem;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #2e51a2;
+    width: 15%;
+    display: block;
+    padding: 0.875rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
   }
 }
 
 
-.ToList{
+.ToList {
+  display: flex;
   margin-left: auto;
   color: white;
   font-weight: 600;
-  font-size: 50px;
+  font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: orange;
+  cursor: pointer;
+}
+
+.Games {
+  margin-top: 10px;
+  background: linear-gradient(to right, #8585ff, lightblue);
+  font-size: 30px;
+  font-weight: bold;
+
+  &_Image {
+    width: 200px;
+    height: 100px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &_Container {
+    display: grid;
+    grid-column: auto;
+    justify-items: start;
+    grid-template-columns: 31% auto;
+    grid-template-rows: 22%;
+    background: linear-gradient(to right, #8585ff, lightblue);
+    //background: #00000014;
+    margin-top: 10px;
+    ;
+  }
+
+  &_Name {
+    grid-column: 2;
+    margin-left: 20px;
+  }
+
+  &_Description {
+    grid-column: 2;
+    margin-left: 20px;
+    font-weight: bold;
+    cursor:pointer;
+  }
 }

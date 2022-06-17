@@ -27,8 +27,12 @@ export class RegisterComponent implements OnInit {
     window.location.href="http://Localhost:4200/profile/" + this.newClient.username; 
   }
 
-  public addClient(username:any , password:any){
-    this.newClient = {username: username, password: password};
+  navigateToLogin(){
+    window.location.href="http://Localhost:4200"
+  }
+
+  public addClient(username:any , password:any, email:any){
+    this.newClient = {username: username, password: password, email:email,description:"",logged:true,profilePic:""};
     this.clientService.createClient(this.newClient).subscribe((response:ClientNoId) => console.log(response));
     this.creado = true;
     setTimeout(this.navigate,

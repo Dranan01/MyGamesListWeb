@@ -38,8 +38,9 @@ private url:string = "http://localhost:8080/client"
       
     }
 
-    getGameList(id:string):Observable<Game[]>{
-      return this.http.get<Game[]>(this.url+"/"+ id+ "/GameList");
+    getGameList(id:string):Observable<ClientGames>{
+      console.log(this.url+"/"+ id+ "/GameList");
+      return this.http.get<ClientGames>(this.url+"/"+ id+ "/GameList");
     }
 
     addToGameList(gameid:string, clientid:string){

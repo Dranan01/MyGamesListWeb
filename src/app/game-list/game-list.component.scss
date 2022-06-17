@@ -18,7 +18,6 @@
       &_MgText {
         display: flex;
         align-self: auto;
-        margin-left: 35%;
         color: white;
         font-weight: 600;
         font-size: 50px;
@@ -32,9 +31,10 @@
 
 
       &_Box{
-         margin-top: 70px;
+         margin-top: 35px;
          display:flex;
          flex-direction: column; 
+         background: linear-gradient(to right, #8585ff, lightblue);
       }
 
       &_Image{
@@ -95,4 +95,86 @@
 
 
 
+}
+
+
+.ProfileBox{
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-end;
+  margin-left: auto;
+  margin-right: 20px;
+  align-items: center;
+}
+
+.ProfileImage{
+  width:50px;
+  height:50px;
+  border: 5px;
+  border-color: black;
+  border-radius: 10px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.ProfileName{
+  font-weight: bold;
+  color:white;
+  cursor: pointer;
+}
+
+.field{
+  margin-left:auto;
+  box-shadow:
+  1px 1px 0 #627bb3
+}
+
+.field>input[type=text] {
+  flex:1;
+  padding:0.6em;
+  border:0.2em solid #627bb3;
+  ;
+}
+
+.field>button {
+  padding:0.8em 0.8em;
+  background-color:#627bb3;
+  color:white;
+  border:none;
+  cursor: pointer;
+}
+
+.Menu{
+  display: flex;
+  margin-top: 33px;
+  flex-direction: column;
+  align-items: flex-end;
+  &_Background{
+
+    border-style: solid;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    margin-right: 10px;
+    background: white;
+    margin-bottom: -30px
+  }
+
+  &_Text{
+    border-bottom: 1px;
+      
+    border-top: 0px;
+    border-right:0px;
+    border-left:  0px; 
+    display: block;
+    text-align: center;
+    
+    border-style: solid;
+    &_2{
+     border: none;
+    }
+  }
+  
 }

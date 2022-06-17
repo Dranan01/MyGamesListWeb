@@ -4,24 +4,39 @@
             <div class="gameList_Toolbar" role="banner">
                 <img class="gameList_Icon" src="assets\icon2.png">
                 <span class="gameList_MgText">My Games List</span>
+                <div class="field" id="searchform">
+                    <input type="text" id="searchterm" placeholder="what are you searching for?" #search />
+                    <button type="button" id="search" (click)="getBySearch(search.value)">Find!</button>
+                </div>
+                <div class="ProfileBox" *ngIf="this.isClient">
+                    <img class="ProfileImage" (click)="showMenu()" [src]="client.profilePic">
+                    <div class="ProfileName" (click)="showMenu()" [innerHTML]=" '<b>' + client.username  +'</b>'"></div>
+                </div>
                 <div class="gameList_Spacer"></div>
             </div>
-        </div>
+            < </div>
 
-        <div class="gameList_Box">
-            <div *ngFor="let item of games , let i = index">
-                <div class="gameList_Grid">
-                    <img class="gameList_Image"  [src]="item.coverPage" />
-                        <div class="gameList_Title" (click)="navigate(item.name)" [innerHTML]="item.name" ></div>
-                        <div class="gameList_Description" [innerHTML]=" 'Description: ' + item.description"></div>
-                        <div class="gameList_Genre" [innerHTML]="'Genre: ' + item.genre"></div>
+                <div *ngIf="this.isMenu" class="Menu">
+                    <div class="Menu_Background">
+                    <div class="Menu_Text" (click)="disconnect()">disconnect</div>
+                    <div class="Menu_Text_2" (click)="navigateToProfile(client.username)">profile</div>
                 </div>
-                <button class="gameList_Button" (click)="saveGameToClientList(item.gameId)">ADD TO MY LIST</button>
-                <hr>
+                </div>
+                <div class="gameList_Box">
+                    <div *ngFor="let item of games , let i = index">
+                        <div class="gameList_Grid">
+                            <img class="gameList_Image" [src]="item.coverPage" />
+                            <div class="gameList_Title" (click)="navigate(item.name)" [innerHTML]="item.name"></div>
+                            <div class="gameList_Description" [innerHTML]=" 'Description: ' + item.description"></div>
+                            <div class="gameList_Genre" [innerHTML]="'Genre: ' + item.genre"></div>
+                        </div>
+                        <button *ngIf="this.isClient" class="gameList_Button"
+                            (click)="saveGameToClientList(item.gameId)">ADD TO MY LIST</button>
+                        <hr>
 
-            </div>
+                    </div>
 
 
+                </div>
         </div>
     </div>
-</div>

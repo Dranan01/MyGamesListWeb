@@ -2,23 +2,26 @@
     <div class="toolbar" role="banner">
         <img class="icon" src="assets\icon2.png">
         <span class="mgText">My Games List</span>
+        <span class="Back" (click)="navigateToLogin()"> Login </span>
         <div class="spacer"></div>
 
     </div>
 
     <div class="loginComponentBox">
         <div *ngIf="!creado">
-        <span class="text">INTRODUCE YOUR USERNAME AND PASSWORD</span>
-        <div class="loginComponentCard">
-            <div class="space"></div>
+            <span class="text">INTRODUCE YOUR USERNAME AND PASSWORD</span>
+            <div class="loginComponentCard">
+                <div class="space"></div>
+                <span class="text">EMAIL:</span>
+                <input class="registerTextArea" name="register3" required=true #email />
                 <span class="text">USERNAME:</span>
                 <input class="registerTextArea" name="register1" required=true type="text" #username />
                 <span class="text">PASSWORD:</span>
                 <input class="registerTextArea" name="register2" required=true #password />
-                <button class="loginButton" name="registerButton" (click)="addClient(username.value, password.value)">
+                <button class="loginButton" name="registerButton" (click)="addClient(username.value, password.value,email.value)">
                     register </button>
             </div>
-            
+
         </div>
         <div *ngIf="creado">
             <span class="welcomeText">WELCOME {{this.newClient.username.toUpperCase()}}</span>
