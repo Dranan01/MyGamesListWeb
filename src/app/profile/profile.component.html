@@ -25,13 +25,14 @@
     <div class="Games"> GAMES ON THE LIST:</div>
     <br>
     <div *ngIf="this.loaded">
-        <div *ngFor="let game of this.list.game">
+        <div *ngFor="let game of this.list.game,let i = index">
             <div class="Games_Container">
                 <div class="Games_Name" [innerHtml]="game.name"></div>
                 <img class="Games_Image" [src]="game.coverPage" />
                 <div class="Games_Description" [innerHTML]="game.description"></div>
-
+                
             </div>
+             <button class="Button" (click)="eliminate(game.gameId)">DELETE</button>
         </div>
     </div>
 </div>

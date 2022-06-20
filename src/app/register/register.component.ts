@@ -33,10 +33,7 @@ export class RegisterComponent implements OnInit {
 
   public addClient(username:any , password:any, email:any){
     this.newClient = {username: username, password: password, email:email,description:"",logged:true,profilePic:""};
-    this.clientService.createClient(this.newClient).subscribe((response:ClientNoId) => console.log(response));
-    this.creado = true;
-    setTimeout(this.navigate,
-      3000)
+    this.clientService.createClient(this.newClient).subscribe((response:ClientNoId) => this.navigate());
 
   } 
 

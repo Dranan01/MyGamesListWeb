@@ -48,5 +48,10 @@ private url:string = "http://localhost:8080/client"
       return this.http.get<ClientGames>(this.url+"/"+clientid+"/game/"+gameid);
     }
 
+    deleteFromGameList(id:string, gameid:string){
+      console.log(this.url+"/"+id+"/game/"+gameid);
+      return this.http.get<ClientGames>(this.url+"/"+id+"/game/"+gameid+"/delete");
+    }
+
 
 }

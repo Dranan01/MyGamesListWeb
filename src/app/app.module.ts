@@ -11,7 +11,14 @@ import { ProfileComponent } from './profile/profile.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './dialog/dialog.component';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +26,18 @@ import { CommonModule } from '@angular/common';
     RegisterComponent,
     ProfileComponent,
     GameListComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    DialogComponent,
+    DialogDeleteComponent
     ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
@@ -34,6 +46,8 @@ import { CommonModule } from '@angular/common';
       { path: 'profile/:username', component: ProfileComponent },
       { path: 'game/:name', component: GameDetailsComponent},
     ]),
+    
+    BrowserAnimationsModule,
    
   ],
   providers: [],

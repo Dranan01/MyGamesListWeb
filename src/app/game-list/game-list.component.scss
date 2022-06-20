@@ -31,10 +31,10 @@
 
 
       &_Box{
-         margin-top: 35px;
-         display:flex;
-         flex-direction: column; 
-         background: linear-gradient(to right, #8585ff, lightblue);
+        margin-top: 67px;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(to right, #8585ff, lightblue);
       }
 
       &_Image{
@@ -52,6 +52,7 @@
       &_Title{
         font-size: 40px;
         font-weight: bold;
+        margin-top: 10px;
         cursor: pointer;
       }
 
@@ -154,12 +155,13 @@
     border-style: solid;
     text-align: center;
     display: flex;
+    margin-top: 25px;
     flex-direction: column;
     align-items: center;
     justify-content: stretch;
     margin-right: 10px;
     background: white;
-    margin-bottom: -30px
+    margin-bottom: -30px;
   }
 
   &_Text{

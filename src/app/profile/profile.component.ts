@@ -8,7 +8,8 @@ import { ClientService } from '../classes/client.service';
 import { ClientGames } from '../classes/clientGames';
 import { Game } from '../classes/game';
 import { LogService } from '../log.service';
-
+import { MatDialog } from '@angular/material/dialog';
+import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 
 @Component({
   selector: 'app-profile',
@@ -25,9 +26,9 @@ export class ProfileComponent implements OnInit {
   loadedClient: boolean;
   isRealClient:boolean = false;
   isEditable:boolean = false;
-  
+   
 
-  constructor(private router: ActivatedRoute, private routerDeactivated: Router, private clientService: ClientService, private renderer:Renderer2) { }
+  constructor(private router: ActivatedRoute, private routerDeactivated: Router, private clientService: ClientService, private renderer:Renderer2,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.renderer.setStyle(document.body, "background","lightblue");
@@ -112,4 +113,16 @@ export class ProfileComponent implements OnInit {
   } 
 
 
+  eliminate(gameId:any){
+    this.clientService.deleteFromGameList(this.client.clientId,gameId).pipe(finalize(() => (null))).subscribe(e => this.list = e);
+  }
+
+
+  openDialog(){
+    this.dialog.open(DialogDeleteComponent,{
+      height: '200x',
+      width: '200px',
+      
+    });
+   }
 }

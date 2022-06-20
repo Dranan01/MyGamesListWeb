@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, OnInit, Optional, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { finalize } from 'rxjs';
 import { Client } from '../classes/client';
@@ -7,6 +7,8 @@ import { ClientGames } from '../classes/clientGames';
 import { Game } from '../classes/game';
 import { GameService } from '../classes/game.service';
 import { LogService } from '../log.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-game-list',
@@ -20,15 +22,16 @@ export class GameListComponent implements OnInit {
   client:Client;
   isClient:boolean;
   isMenu:boolean
+  
 
-
-  constructor(private gameService:GameService,private clientService:ClientService, private renderer:Renderer2, private router:Router, private activRouter:ActivatedRoute) { }
+  constructor(private gameService:GameService,private clientService:ClientService, private renderer:Renderer2, private router:Router, private activRouter:ActivatedRoute,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loadGames();
     this.loadClient();
     this.renderer.setStyle(document.body, "background","lightblue");
-    
+  
     
   }
 
@@ -51,7 +54,7 @@ export class GameListComponent implements OnInit {
 
 
   public saveGameToClientList(gameId:any){
-    this.clientService.addToGameList(gameId,this.client.clientId).pipe(finalize(() => (console.log("game list loaded")))).subscribe(e => this.clientGames = e);
+    this.clientService.addToGameList(gameId,this.client.clientId).pipe(finalize(() => (console.log("game list loaded"),this.openDialog()))).subscribe(e => this.clientGames = e);
   }
 
 
@@ -77,6 +80,13 @@ export class GameListComponent implements OnInit {
    }
 
 
+   openDialog(){
+    this.dialog.open(DialogComponent,{
+      height: '200x',
+      width: '200px',
+      
+    });
+   }
  
 
 
